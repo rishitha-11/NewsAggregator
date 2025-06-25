@@ -38,7 +38,7 @@ router.post('/forgot-password', async (req, res) => {
     await user.save();
 
     // Send password reset email
-    const resetLink = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetLink = `newsaggregator-mernstack.netlify.app/reset-password/${resetToken}`;
 
     const mailOptions = {
       from: process.env.EMAIL_USER,

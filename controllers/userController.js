@@ -106,7 +106,7 @@ export const requestPasswordReset = async (req, res) => {
     await user.save(); // Save hashed token in DB
 
     // Construct reset link
-    const resetLink = `http://localhost:5173/reset-password?token=${resetToken}`;
+    const resetLink = `newsaggregator-mernstack.netlify.app/reset-password?token=${resetToken}`;
 
     // Send email with the reset link
     await sendEmail(user.email, "Password Reset Request", `Click here to reset your password: ${resetLink}`);
